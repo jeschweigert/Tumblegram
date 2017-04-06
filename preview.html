@@ -1,0 +1,1013 @@
+<!--    TUMBLEGRAM    -->
+<!-- MADE BY N-A-B.ML -->
+<!-- ---- V 0.92 ---- -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tumblegram</title>
+        <link rel="icon" href="" />
+        <meta name="if:Black and white avatar filter" content="0" />
+        <meta name="if:Show post caption" content="1" />
+        <meta name="if:Show navigation bar" content="1" />
+        <meta name="if:Show search bar" content="1" />
+        <meta name="if:Blur NSFW thumbnail" content="1" />
+        <meta name="if:Infinite scrolling" content="0" />
+        <meta name="if:Rainbow background" content="0" />
+        <meta name="select:Columns" content="three" title="Three" />
+        <meta name="select:Columns" content="four" title="Four" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700,700italic' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css' />
+        <link href='http://static.tumblr.com/hax6owt/kIvo8a3zq/rainbow.css' rel='stylesheet' type='text/css' />
+        <style type="text/CSS">
+            :-ms-input-placeholder {
+                color: rgba(0,0,0, 0.5);
+            }
+            input::-moz-placeholder {
+                color: rgba(0,0,0, 0.5);
+            }
+            :-moz-placeholder {
+                color: rgba(0,0,0, 0.5);
+            }
+            ::-webkit-input-placeholder {
+                color: rgba(0,0,0, 0.5);
+            }
+            ::-webkit-scrollbar {
+                width: 12px;
+                height: 12px;
+                background: transparent;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #FFFFFF;
+                border-radius: 8px;
+            }
+
+            .notes::-webkit-scrollbar {
+                width: 12px;
+                height: 12px;
+                background: rgba(0,0,0, 0.25);
+            }
+            .notes::-webkit-scrollbar-thumb {
+                background-color: #3897f0;
+                border-radius: 0;
+            }
+
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: 'Roboto';
+                color: #000000;
+            }
+            a {
+                color: #3897f0;
+                font-weight: bold;
+                text-decoration: none;
+                transition: all .2s ease;
+            }
+            a:hover {
+                color: rgba(56,151,240, 0.75);
+            }
+            a:active {
+                color: transparent;
+            }
+            p:empty {
+                display: none;
+            }
+            input:focus {
+                outline: 0;
+            }
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+			ul li {
+			    padding: 4px;
+			}
+			ul li:nth-child(even) {
+			    background-color: rgba(0,0,0, 0.25);
+			}
+            .thumbnail .hidden, .thumbnail .tumblr_blog, .hide-me-too-please {
+                display: none !important;
+            }
+
+            .thumbnail, .header, .post.chat .line #msg, .pull-out {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .content {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+                background: #3897f0;
+            }
+            .header {
+                background: #FFFFFF;
+                padding: 16px 0;
+                position: fixed;
+                width: 100%;
+                z-index: 102;
+            }
+            .header .contents {
+                display: flex;
+                flex-flow: row;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .header .contents .ava {
+                text-align: center;
+                position: relative;
+                flex: 0 0 100px;
+                min-height: 32px;
+            }
+            .header .contents .ava a {
+                display: inline-block;
+                vertical-align: bottom;
+            }
+            .header .contents .ava a:hover .img {
+                transform: translate(-50%, -50%) scale(1.1, 1.1);
+            }
+            .header .contents .ava a:active .img {
+                transform: translate(-50%, -50%) scale(0.9, 0.9);
+            }
+            .header .contents .ava .img {
+                display: block;
+                width: 48px;
+                height: 48px;
+                background: transparent no-repeat center center/cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all .2s ease;
+            }
+            .header .contents .ava .square, .header .contents .ava .square .img {
+                border-radius: 8px;
+            }
+            .header .contents .ava .circle, .header .contents .ava .circle .img {
+                border-radius: 100%;
+            }
+            .header .contents .bio {
+                flex: 2 1 auto;
+            }
+            .header .contents .bio h2 {
+                font-size: 34px;
+                margin: 0;
+                font-weight: 300;
+                display: inline;
+                font-family: 'Roboto Condensed';
+            }
+            .header .contents .bio h2 a {
+                color: #000000;
+                text-decoration: none;
+                font-weight: 300;
+                transition: all .2s ease;
+            }
+            .header .contents .bio h2 a:hover {
+                color: rgba(0,0,0, 0.75);
+            }
+            .header .contents .bio h2 a:active {
+                color: transparent;
+            }
+            .header .contents .bio #desc {
+                margin-top: 14px;
+                margin-bottom: 17px;
+            }
+            .header .contents .bio p {
+                margin: 0;
+                display: inline;
+            }
+            .bio #search-bar {
+                width: 175px;
+                overflow: hidden;
+                margin: 0;
+                margin-right: 12px;
+                float: right;
+                height: 41px;
+            }
+            .bio #search-bar input[type="text"] {
+                width: 85%;
+                padding-left: 2px;
+                box-sizing: border-box;
+                border: 0px;
+                height: 100%;
+                border-radius: 0;
+                font-size: 18px;
+                background-color: transparent;
+                color: #3897f0;
+            }
+            .bio #search-bar input[type="submit"] {
+                font-family: FontAwesome;
+                width: 15%;
+                border: 0px;
+                height: 100%;
+                border-radius: 0;
+                font-size: 20px;
+                color: #3897f0;
+                background-color: transparent;
+                cursor: pointer;
+                transition: all .2s ease;
+            }
+            .bio #search-bar input[type="submit"]:hover {
+                color: rgba(56,151,240, 0.75);
+            }
+            .bio #search-bar input[type="submit"]:active {
+                color: transparent;
+            }
+            .header .desc {
+                margin: 0 auto;
+                max-width: 600px;
+                padding: 12px;
+                text-align: center;
+                padding-bottom: 0;
+            }
+            .header .desc #desc {
+                margin: 12px 0;
+                margin-top: 0;
+            }
+            .header .desc p {
+                margin: 0;
+                padding: 0;
+            }
+            .header .desc a {
+                margin-right: 40px;
+            }
+            .header .desc a:last-child {
+                margin-right: 0;
+            }
+            .header .desc .fa {
+                font-size: 18px;
+            }
+            .body {
+                flex: 1 1 auto;
+                background: rgba(255,255,255, 0.75);
+                overflow-y: auto;
+                margin-top: 73px;
+            }
+            .body .posts {
+                max-width: 800px;
+                margin: 0 auto;
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .body.four .posts {
+                margin: 12px auto;
+            }
+            .body .posts .thumb-wrapper {
+                position: relative;
+                display: inline-block;
+                flex: 1 0 33%;
+            }
+            .body.four .posts .thumb-wrapper {
+                flex: 1 0 25%;
+            }
+            .body .posts .thumb-wrapper.no-results {
+                position: absolute !important;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .body .posts #thumb {
+                display: inline-block;
+                transform: translateX(-50%);
+                position: relative;
+                left: 50%;
+                cursor: pointer !important;
+                z-index: 100;
+            }
+            .body .posts .thumbnail {
+                position: relative;
+                opacity: 0;
+                width: 175px;
+                height: 175px;
+                margin: 0 auto;
+                border-radius: 8px;
+                background: #FFFFFF;
+                box-shadow: 0 0 6px rgba(0,0,0,0.3);
+                word-wrap: break-word;
+                overflow: hidden;
+                transition: all .2s ease;
+            }
+            .body.four .posts .thumbnail {
+                width: 150px;
+                height: 150px;
+                font-size: 14px;
+            }
+            .body .posts .thumbnail:hover {
+                transform: scale(1.05, 1.05);
+                box-shadow: 0 0 12px rgba(0,0,0,0.55);
+            }
+            .body.four .posts .thumbnail:hover {
+                transform: scale(1.08, 1.08);
+                box-shadow: 0 0 12px rgba(0,0,0,0.55);
+            }
+            .body .posts .thumbnail:active, .body.four .posts .thumbnail:active {
+                transform: scale(0.9, 0.9);
+                box-shadow: none;
+            }
+            .posts .thumbnail #content {
+                background: transparent no-repeat center center/cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .posts .thumbnail.nsfw #content {
+                -webkit-filter: blur(8px) grayscale(100%);
+                filter: blur(8px) grayscale(100%);
+                z-index: 99;
+                transition: all .2s ease;
+            }
+            .posts .thumbnail #nsfw {
+                text-align: center;
+                font-size: 16px;
+                color: #ffffff;
+                text-shadow: 0 0 5px #000, 0 0 7px #000, 0 0 11px #000;
+                display: table;
+                z-index: 100;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .posts .thumbnail #nsfw-warning {
+                display: table-cell;
+                vertical-align: middle;
+                opacity: 0;
+                transition: all .2s ease;
+            }
+            .posts .thumbnail.nsfw #nsfw-warning {
+                opacity: 1;
+            }
+            .posts .thumbnail #nsfw-warning #smol {
+                font-size: 12px;
+            }
+            .posts .thumbnail #overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+                background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 78%, rgba(255,255,255,1) 94%, rgba(255,255,255,1) 100%);
+                background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 78%,rgba(255,255,255,1) 94%,rgba(255,255,255,1) 100%);
+                background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 78%,rgba(255,255,255,1) 94%,rgba(255,255,255,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+            }
+            .posts .thumbnail #media-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                text-shadow: 0 0 6px rgba(0, 0, 0, 0.85);
+                text-align: center;
+                font-size: 36px;
+                line-height: 175px;
+            }
+            .four .posts .thumbnail #media-overlay {
+                line-height: 150px;
+            }
+            .posts .results .thumbnail.text {
+                text-align: center;
+                font-size: 22px;
+                display: table;
+            }
+            .posts .results .thumbnail.text p {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .posts .thumbnail a {
+                pointer-events: none;
+            }
+            .posts .thumbnail blockquote {
+                padding: 0;
+                margin: 0;
+                margin-bottom: 14px;
+            }
+            .posts .thumbnail p {
+                padding: 0;
+                margin: 0;
+            }
+            .posts .thumbnail.text #content, .posts .thumbnail.quote #content, .posts .thumbnail.link #content, .posts .thumbnail.chat #content, .posts .thumbnail.answer #content {
+                box-sizing: border-box;
+                padding: 8px;
+            }
+            .posts .thumbnail img, .posts .thumbnail iframe {
+                width: 100%;
+                height: auto;
+            }
+            .posts .thumbnail.audio #content {
+                background-image: url("http://static.tumblr.com/hax6owt/vBio82lwv/album-art.png");
+            }
+            .posts .thumb-wrapper .pull-out {
+                text-align: center;
+                background: #FFFFFF;
+                width: 175px;
+                padding: 3px 2px;
+                box-sizing: border-box;
+                position: absolute;
+                transition: all .2s ease;
+                cursor: default;
+                z-index: 99;
+                opacity: 0;
+            }
+            .body.four .posts .thumb-wrapper .pull-out {
+                width: 150px;
+                font-size: 12px;
+            }
+            .posts .thumb-wrapper #time-ago {
+                transform: translate(-50%, 0);
+                left: 50%;
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+            }
+            .four .thumb-wrapper #notes {
+                transform: translate(-50%, -1px);
+            }
+            .posts .thumb-wrapper #notes {
+                transform: translate(-50%, -29px);
+                left: 50%;
+                border-bottom-right-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+            .four .thumb-wrapper #notes {
+                transform: translate(-50%, -26px);
+            }
+            .thumb-wrapper input[type="checkbox"]:checked ~ .pull-out {
+                opacity: 1;
+            }
+            .thumb-wrapper input[type="checkbox"]:checked ~ #time-ago {
+                transform: translate(-50%, -29px);
+            }
+            .four .thumb-wrapper input[type="checkbox"]:checked ~ #time-ago {
+                transform: translate(-50%, -26px);
+            }
+            .thumb-wrapper input[type="checkbox"]:checked ~ #notes {
+                transform: translate(-50%, 0);
+            }
+            .four .thumb-wrapper input[type="checkbox"]:checked ~ #notes {
+                transform: translate(-50%, 2px);
+            }
+            .thumb-wrapper input[type="checkbox"]:checked ~ #thumb .thumbnail {
+                transform: scale(1.05, 1.05);
+                box-shadow: 0 0 12px rgba(0,0,0,0.55);
+            }
+            .four .thumb-wrapper input[type="checkbox"]:checked ~ #thumb .thumbnail {
+                transform: scale(1.08, 1.08);
+                box-shadow: 0 0 12px rgba(0,0,0,0.55);
+            }
+            .thumb-wrapper input[type="checkbox"]:checked ~ #thumb .nsfw #nsfw-warning {
+                opacity: 0;
+            }
+            .thumb-wrapper input[type="checkbox"]:checked ~ #thumb .nsfw #content {
+                -webkit-filter: blur(0) grayscale(0);
+                filter: blur(0) grayscale(0);
+            }
+            .pagination {
+                text-align: center;
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+            .pagination a {
+                background-color: #FFFFFF;
+                color: #3897f0;
+                padding: 6px;
+                border: 1px solid rgba(0,0,0,0.45);
+            }
+            .pagination a:hover {
+                color: rgba(56,151,240, 0.75);
+            }
+            .pagination a:active {
+                color: transparent;
+            }
+            .pagination #first, .pagination #prev, .pagination #next, .pagination #last {
+                background-color: #3897f0;
+                color: #FFFFFF;
+            }
+            .pagination #first:hover, .pagination #prev:hover, .pagination #next:hover, .pagination #last:hover {
+                color: rgba(255,255,255, 0.75);
+            }
+            .pagination #first:active, .pagination #prev:active, .pagination #next:active, .pagination #last:active {
+                color: transparent;
+            }
+            .pagination #first {
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+            .pagination #last {
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+            .pagination #current-page {
+                background-color: #3897f0;
+                color: #FFFFFF;
+                padding: 6px;
+                border: 1px solid rgba(0,0,0,0.45);
+            }
+
+
+
+            .post-container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .post {
+			    max-width: 500px;
+				background-color: #FFFFFF;
+				margin: 14px auto;
+				border-radius: 8px;
+				overflow: hidden;
+				box-sizing: border-box;
+                box-shadow: 0 0 6px rgba(0,0,0,0.3);
+			}
+			.post.real-post {
+			    max-width: initial;
+			    width: 50%;
+			}
+			.post.real-post.has-tags, .post.real-post.has-notes {
+			    float: left;
+			}
+			.post #title, #tags #title {
+				color: #000000;
+				font-weight: 300;
+				font-size: 22px;
+				text-align: center;
+				padding: 12px 6px;
+				transition: all .2s ease;
+			}
+			.post.link a:first-of-type {
+			    color: #FFFFFF;
+			}
+			.post.link a #title {
+			    color: #FFFFFF;
+			    cursor: pointer;
+			}
+			.post.link a:hover #title {
+				background-color: rgba(0,0,0,0.75);
+			}
+			.post.link a:active #title {
+			    background-color: transparent;
+			}
+			.post.audio .audio-title {
+			    position: relative;
+                width: 100%;
+                height: 0;
+			}
+			.post.audio .audio-title #blur {
+			    -webkit-filter: blur(5px);
+			    -moz-filter: blur(5px);
+			    -o-filter: blur(5px);
+			    -ms-filter: blur(5px);
+			    filter: blur(5px);
+			    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
+			    position: absolute;
+			    width: 100%;
+			    padding: 12px 0;
+			    font-size: 16px;
+			    background: url("http://static.tumblr.com/hax6owt/7Guo7wh3e/album-art.png") transparent no-repeat top center/cover;
+			    color: transparent;
+			    overflow: hidden;
+			    z-index: 100;
+			}
+			.post.audio .audio-title #title {
+			    position: absolute;
+			    width: 100%;
+			    padding: 12px 0;
+			    font-size: 16px;
+			    background-color: rgba(255,255,255, 0.6);
+			    color: #000000;
+			    z-index: 101;
+			}
+			.post #asker {
+			    text-transform: lowercase;
+			    text-align: center;
+			    font-size: 12px;
+				margin-top: -8px;
+				margin-bottom: 12px;
+			}
+			.post #asker a {
+			    color: #000000;
+				transition: all .2s ease;
+			}
+			.post #asker a:hover {
+				color: rgba(0,0,0,0.75);
+			}
+			.post #asker a:active {
+			    color: transparent;
+			}
+			.post #photoset iframe {
+			    width: 100%;
+			    max-width: 800px;
+			}
+			.post #media iframe {
+			    width: 100%;
+			    height: auto;
+			}
+			.post.video #media {
+			    width: 100%;
+			    height: 0;
+			    position: relative;
+			    padding-bottom: 100%;
+			}
+			.post.video #media iframe {
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			}
+			.post.audio #media {
+			    width: 100%;
+			    height: auto;
+			}
+			.post.audio #media iframe {
+			    width: 100%;
+			    height: 100%;
+			}
+			.post.audio #media-player {
+			    width: 100%;
+			    height: 0;
+			    position: relative;
+			    padding-bottom: 100%;
+			    background: url("http://static.tumblr.com/hax6owt/7Guo7wh3e/album-art.png") no-repeat center center/cover;
+			}
+			.post.audio #media-player #album-art {
+			    position: absolute;
+			    pointer-events: none;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    z-index: 99;
+			}
+			.post.audio #media-player iframe {
+			    width: 70px;
+			    height: 70px;
+			    overflow: hidden;
+			    border-radius: 100%;
+			    box-shadow: 1px 1px 0 rgba(0,0,0,0.75);
+			    border: 1px solid rgba(0,0,0,0.65);
+			    opacity: 0.55;
+			    position: absolute;
+			    top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all .2s ease;
+			    z-index: 100;
+			}
+			.post.audio #media-player iframe:hover {
+			    opacity: 0.8;
+			}
+			.post #quote {
+			    text-align: center;
+			    font-size: 24px;
+			    font-weight: bold;
+			}
+			.post #quote::before, .post #quote::after {
+			    content: '"';
+			}
+			.post #src {
+			    text-align: center;
+			    font-style: italic;
+			}
+			.post #src::before {
+			    content: '- ';
+			}
+		    .post.real-post #desc {
+				padding: 8px;
+			}
+			.post #desc:empty {
+			    padding: 0;
+			}
+			.post #desc blockquote, .p-notes blockquote {
+			    margin: 0;
+                margin-left: 8px;
+                margin-top: 6px;
+                margin-bottom: 6px;
+                border-left: 1px solid #000000;
+                padding: 6px;
+                padding-left: 10px;
+                padding-right: 0;
+			}
+			.post #desc > blockquote {
+			    margin-bottom: 0;
+			}
+			.post #desc > blockquote ~ p {
+			    margin-top: 6px;
+			}
+            .post #desc *[title] {
+                border-bottom: 1px dashed rgba(0,0,0, 0.45);
+            }
+            .post #desc ul, .thumbnail ul {
+                list-style-type: circle;
+            }
+            .thumbnail ul {
+                padding-left: 20px;
+            }
+            .post #desc li, .thumbnail li {
+                background: transparent !important;
+            }
+
+			.post #desc p {
+			    margin: 0;
+			    overflow-wrap: break-word;
+			}
+			.post #desc img, .post #media img {
+			    width: 100%;
+			    height: auto;
+			}
+			.post #desc iframe {
+			    width: 100% !important;
+			}
+			.post.real-post #desc ul, .post.real-post #desc ol {
+                margin: 0;
+                padding: 0;
+                margin-left: 18px;
+            }
+			.post.chat .line.odd, .thumbnail .line.odd {
+			    text-align: left;
+			}
+			.post.chat .line.even, .thumbnail .line.even {
+			    text-align: right;
+			}
+			.post.chat .line #msg, .thumbnail .line #msg {
+			    max-width: 80%;
+			    display: inline-block;
+			    border-radius: 8px;
+			    margin: 4px 8px;
+                position: relative;
+                padding: 6px 8px;
+			}
+			.thumbnail .line #msg {
+			    max-width: 60%;
+                font-size: 12px;
+			}
+			.post.chat .line.odd #msg, .thumbnail .line.odd #msg {
+			    background-color: #e5e5ea;
+			    color: #000000;
+			}
+			.post.chat .line.even #msg, .thumbnail .line.even #msg {
+			    background-color: #0a83fe;
+                color: #ffffff;
+			}
+			.post.chat .line.odd #msg::after, .thumbnail .line.odd #msg::after {
+                content: "";
+                position: absolute;
+                left: -.5em;
+                bottom: 0;
+                width: .5em;
+                height: 1em;
+                border-right: .5em solid #e5e5ea;
+                border-bottom-right-radius: 1em .5em;
+            }
+			.post.chat .line.even #msg::after, .thumbnail .line.even #msg::after {
+                content: "";
+                position: absolute;
+                right: -.5em;
+                bottom: 0;
+                width: .5em;
+                height: 1em;
+                border-left: .5em solid #0a83fe;
+                border-bottom-left-radius: 1em .5em;
+            }
+			.post #tags {
+			    width: 100%;
+			    padding: 3px 6px;
+			    opacity: 0.4;
+			    transition: all .2s ease;
+			    overflow-y: hidden;
+                overflow-x: auto;
+                white-space: nowrap;
+                box-sizing: border-box;
+			}
+			.post #tags:hover {
+			    opacity: 1;
+			}
+			.post #tags a {
+			    margin: 0 2px;
+			}
+			.post #footer {
+				padding: 8px;
+				text-align: center;
+			}
+			.post #footer .like {
+                position: relative;
+                top: 3px;
+                text-align: left;
+                display: inline-block;
+                cursor: pointer;
+            }
+            .post #footer .like svg path {
+                fill: #000000;
+                cursor: pointer;
+				transition: all .2s ease;
+            }
+            .post #footer .like:hover svg path {
+                fill: rgba(0,0,0, 0.75);
+            }
+            .post #footer .like .like_button {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                display: inline-block;
+                cursor: pointer;
+				transition: opacity .2s ease;
+            }
+            .post #footer .like .like_button.liked {
+                opacity: 1;
+                cursor: pointer;
+            }
+            .post #footer .reblog_button {
+                display: inline-block !important;
+                position: relative;
+                top: 3px;
+            }
+            .post #footer .reblog_button svg {
+                fill: #000000;
+				transition: all .2s ease;
+            }
+            .post #footer .reblog_button:hover svg {
+                fill: rgba(0,0,0, 0.75);
+            }
+
+			.right {
+			    width: 48%;
+			    float: right;
+			}
+		    .right #tags {
+			    font-size: 14px;
+				background-color: #FFFFFF;
+                box-shadow: 0 0 6px rgba(0,0,0,0.3);
+				margin: 14px auto;
+				border-radius: 8px;
+				padding: 6px 2px;
+                padding-top: 0;
+                text-align: center;
+			    width: 100%;
+		    }
+		    .right #tags #title {
+		        font-size: 16px;
+                padding: 6px 3px;
+		    }
+		    #tags a {
+		        padding: 3px 4px;
+		        border-radius: 8px;
+		        background-color: #3897f0;
+		        color: #FFFFFF;
+		        margin: 2px;
+                display: inline-block;
+		    }
+		    #tags a:hover {
+		        background-color: rgba(56,151,240, 0.75);
+		    }
+		    #tags a:active {
+		        background-color: transparent;
+		    }
+			.p-notes {
+			    position: relative;
+			    height: 0;
+			    width: 100%;
+			    padding-bottom: 100%;
+			    font-size: 12px;
+				background-color: #FFFFFF;
+                box-shadow: 0 0 6px rgba(0,0,0,0.3);
+				margin: 14px auto;
+			}
+			.p-notes .notes {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			    overflow-y: auto;
+			    list-style-type: none;
+			    padding: 0;
+                margin: 0;
+			}
+			.p-notes .notes li {
+			    padding: 4px;
+			}
+			.p-notes .notes li:nth-child(even) {
+			    background-color: rgba(0,0,0, 0.25);
+			}
+			.p-notes .notes li img {
+			    display: none;
+			}
+			.p-notes .notes blockquote {
+			    border-left: 1px solid #3897f0;
+			}
+        </style>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="https://use.fontawesome.com/5b68ee22f6.js"></script>
+		<script type="text/javascript" src="http://static.tumblr.com/hax6owt/Vg8o7rhe5/jquery.photoset-grid.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.tumblr_blog').parent().addClass('hidden');
+                var conw = $('.thumb-wrapper').width();
+                var thumbw = $('.thumbnail').width();
+                var diff = (conw - thumbw)/2;
+                if(!$(".thumb-wrapper").hasClass("no-results")){
+                    $('.thumb-wrapper').css({
+                        'margin': diff + 'px 0'
+                    });
+                }
+                var headerHeight = $('.header').outerHeight();
+                $('.body').css({
+                    'margin-top': headerHeight + 'px'
+                });
+                $(".thumbnail").each(function(o) {
+                    $(this).animate({
+                        opacity: "1"
+                    }, 500)
+                });
+                $('.photoset-grid').photosetGrid();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <div class="header">
+                <div class="contents">
+                    <div class="ava"><a class="circle" href=""><div class="img" style="background-image: url('https://d1sui4xqepm0ps.cloudfront.net/categories/tumblr?image=cdn');"></div></a></div>
+                    <div class="bio">
+                        <h2><a href="{BlogURL}">Tumblegram</a></h2>
+                        <form id="search-bar" action="" method="get">
+                            <input type="text" name="q" placeholder="Search..." value="" /><input type="submit" value="&#xf002;" />
+                        </form>
+                    </div>
+                </div>
+                <div class="desc">
+                    <div id="desc">A Tumblr theme loosely based on Instagram profiles.</div>
+                    <a href="">Archive</a>
+                    <a href="">Submit</a>
+                    <a href="">AMA</a>
+                </div>
+            </div>
+            <div class="body {select:Columns}">
+                <!--<form id="search-bar" method="get" action="/search">
+                    <input type="text" name="q" value="{SearchQuery}" placeholder="Search..." /><input type="submit" value="&#xf002;" />
+                </form>-->
+                <div class="posts">
+                    <div class="thumb-wrapper">
+                        <input type="checkbox" id="12345" name="12345" class="hide-me-too-please" />
+                        <div id="time-ago" class="pull-out">12 minutes ago</div>
+                        <label id="thumb" for="12345">
+                            <div class="thumbnail text ">
+                                <div id="content">
+                                    <div id="overlay"></div>
+                                    <b>Example of a text post:</b><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+                            </div>
+                        </label>
+                        <div id="notes" class="pull-out"><a href="">4,362 notes</a></div>
+                    </div>
+					<div class="thumb-wrapper">
+                        <input type="checkbox" id="48569" name="48569" class="hide-me-too-please" />
+                        <div id="time-ago" class="pull-out">12 minutes ago</div>
+                        <label id="thumb" for="48569">
+                            <div class="thumbnail quote ">
+                                <div id="content"{block:Photo} style="background-image: url('{PhotoURL-250}');"{/block:Photo}{block:Panorama} style="background-image: url('{PhotoURL-250}');"{/block:Panorama}{block:Photoset}{block:Photos} style="background-image: url('{PhotoURL-250}');"{/block:Photos}{/block:Photoset}{block:Audio}{block:AlbumArt} style="background-image: url('{AlbumArtURL}');"{/block:AlbumArt}{/block:Audio}{block:Video}{block:VideoThumbnail} style="background-image: url('{VideoThumbnailURL}');"{/block:VideoThumbnail}{/block:Video}>
+                                    <div id="overlay"></div>
+                                    <b>The best part of waking up is Folgers in your cup.</b><br />~the Folgers commercial
+                                    {block:Link}<div id="overlay"></div>
+                                    <b>{Name}</b>{block:Description}<br />{Description}{/block:Description}{/block:Link}
+                                    {block:Chat}<div id="overlay"></div>
+                                    {block:Title}<b>{Title}</b><br />{/block:Title}{block:Lines}<div class="line {Alt}"><span id="msg">{block:Label}<i>{Label}</i> {/block:Label}{Line}</span></div>{/block:Lines}{/block:Chat}
+                                    {block:Answer}<div id="overlay"></div>
+                                    <b>"{Question}"</b><br />{Answer}{/block:Answer}
+                                    {block:Audio}<div id="media-overlay"><i class="fa fa-play" aria-hidden="true"></i></div>{/block:Audio}
+                                    {block:Video}<div id="media-overlay"><i class="fa fa-play" aria-hidden="true"></i></div>{/block:Video}
+                                </div>
+                            </div>
+                        </label>
+                        <div id="notes" class="pull-out"><a href="">2,482 notes</a></div>
+                    </div>
+					
+					<div class="thumb-wrapper">
+                        <input type="checkbox" id="18790" name="18790" class="hide-me-too-please" />
+                        <div id="time-ago" class="pull-out">24 minutes ago</div>
+                        <label id="thumb" for="18790">
+                            <div class="thumbnail photo ">
+                                <div id="content" style="background-image: url('http://budgetstockphoto.com/bamers/stock_photo_spectrum.jpg');">
+                                    
+                                </div>
+                            </div>
+                        </label>
+                        <div id="notes" class="pull-out"><a href="">2,482 notes</a></div>
+                    </div>
+                </div>
+		        <div class="pagination">
+		        <span id="current-page">1</span><a href="">2</a><a href="">3</a><a id="next" href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a><a id="last" href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+		        </div>
+            </div>
+        </div>
+    </body>
+</html>
